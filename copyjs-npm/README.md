@@ -26,8 +26,6 @@ Or in the browser:
 
 *Remove the `.min` in the URL for development.*
 
-
-
 ## Usage
 
 Simple.
@@ -48,7 +46,7 @@ All boolean values inside the `options` object.
 
 **Result**:
 
-![h1-example](C:\home\Justice\Computer\Code\libs\copyjs\h1-example.png)
+![h1-example](..\h1-example.png)
 
 
 
@@ -66,7 +64,7 @@ copyjs("#p", { html: true, copyFromSelector: true });
 
 **Result**:
 
-![p-example](C:\home\Justice\Computer\Code\libs\copyjs\p-example.png)
+![p-example](..\p-example.png)
 
 
 

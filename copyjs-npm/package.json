@@ -1,0 +1,13 @@
+{
+  "name": "copyjs",
+  "version": "1.0.0",
+  "description": "A lightweight library to copy text to the clipboard.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": ["clipboard", "copy", "copyjs"],
+  "author": "codingjlu",
+  "license": "MIT",
+  "repository": "https://github.com/codingjlu/copyjs"
+}
