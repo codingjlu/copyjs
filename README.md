@@ -15,13 +15,13 @@ Or in the browser:
 **Regular**
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/codingjlu/copyjs/copy.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/codingjlu/copyjs@main/copy.min.js"></script>
 ```
 
 **Module**
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/codingjlu/copyjs/copy.min.mjs"></script>
+<script src="https://cdn.jsdelivr.net/gh/codingjlu/copyjs@main/copy.min.mjs"></script>
 ```
 
 *Remove the `.min` in the URL for development.*
