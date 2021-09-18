@@ -3,7 +3,7 @@ const copyjs = function (str, options = { reSelect: true, html: false, copyFromS
 	const sel = window.getSelection();
 	const selection = { start: { index: sel.anchorOffset, node: sel.anchorNode }, end: { index: sel.focusOffset, node: sel.focusNode } };
 	if (options.copyFromSelector) {
-		if (!html) {
+		if (!options.html) {
 			const copyjs_textarea = document.createElement("textarea");
 			document.body.append(copyjs_textarea);
 			const target = document.querySelector(str);
