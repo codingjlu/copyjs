@@ -31,8 +31,13 @@ const copyjs = function (str, options = { reSelect: true, html: false, copyFromS
 			const selectorSel = window.getSelection();
 			selectorSel.removeAllRanges();
 			const selectorRange = document.createRange();
-			selectorRange.selectNodeContents(document.querySelector(str));
-			selectorSel.addRange(selectorRange);
+			const tag = document.querySelector(str).tagName;
+			if(tag === "INPUT" || tag === "TEXTAREA") {
+				document.querySelector(str).select();
+			} else {
+				selectorRange.selectNodeContents(document.querySelector(str));
+				selectorSel.addRange(selectorRange);
+			}
 			document.execCommand("copy");
 		}
 	}
