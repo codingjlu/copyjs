@@ -1,7 +1,21 @@
 'use strict';
 const copyjs = function (str, options = { reSelect: true, html: false, copyFromSelector: false }) {
-	const sel = window.getSelection();
-	const selection = { start: { index: sel.anchorOffset, node: sel.anchorNode }, end: { index: sel.focusOffset, node: sel.focusNode } };
+	class Reselect {
+    		init() {
+        		this.selection = window.getSelection();
+        		this.selectionOptions = { start: { index: this.selection.anchorOffset, node: this.selection.anchorNode }, end: { index: this.selection.focusOffset, node: this.selection.focusNode } };
+    		}
+    		reselect() {
+        		const newSelection = window.getSelection();
+        		newSelection.removeAllRanges();
+        		const range = document.createRange();
+        		range.setStart(this.selectionOptions.start.node, this.selectionOptions.start.index);
+        		range.setEnd(this.selectionOptions.end.node, this.selectionOptions.end.index);
+        		newSelection.addRange(range);
+    		}
+	}
+	const reselect = new Reselect();
+	reselect.init();
 	if (options.copyFromSelector) {
 		if (!options.html) {
 			const copyjs_textarea = document.createElement("textarea");
@@ -43,12 +57,7 @@ const copyjs = function (str, options = { reSelect: true, html: false, copyFromS
 		copyjs_textarea.remove();
 	}
 	if (options.reSelect) {
-		const reSelection = window.getSelection();
-		reSelection.removeAllRanges();
-		var range = document.createRange();
-		range.setStart(selection.start.node, selection.start.index);
-		range.setEnd(selection.end.node, selection.end.index);
-		reSelection.addRange(range);
+		reselect.reselect();
 	}
 	return true;
 }
