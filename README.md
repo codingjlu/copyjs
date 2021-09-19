@@ -6,14 +6,6 @@ A lightweight library to copy text to the clipboard.
 
 ## Installation
 
-```sh
-npm i copy_js
-```
-
-Or in the browser:
-
-**Regular**
-
 ```html
 <script src="https://cdn.jsdelivr.net/gh/codingjlu/copyjs@1.0/copy.min.js"></script>
 ```
