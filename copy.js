@@ -2,16 +2,28 @@
 const copyjs = function (str, options = { reSelect: true, html: false, copyFromSelector: false }) {
 	class Reselect {
     		init() {
-        		this.selection = window.getSelection();
-        		this.selectionOptions = { start: { index: this.selection.anchorOffset, node: this.selection.anchorNode }, end: { index: this.selection.focusOffset, node: this.selection.focusNode } };
+        		this.selectionOptions = {
+            			start: {
+                			index: window.getSelection().anchorOffset,
+                			node: window.getSelection().anchorNode
+            			},
+            			end: {
+                			index: window.getSelection().focusOffset,
+                			node: window.getSelection().focusNode
+            			}
+        		};
+			return true;
     		}
     		reselect() {
+			if(!this.selectionOptions.start.node)
+				return false;
         		const newSelection = window.getSelection();
         		newSelection.removeAllRanges();
         		const range = document.createRange();
         		range.setStart(this.selectionOptions.start.node, this.selectionOptions.start.index);
         		range.setEnd(this.selectionOptions.end.node, this.selectionOptions.end.index);
         		newSelection.addRange(range);
+			return true;
     		}
 	}
 	const reselect = new Reselect();
