@@ -7,13 +7,13 @@ A lightweight library to copy text to the clipboard.
 ## Installation
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/codingjlu/copyjs@1.0/copy.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/codingjlu/copyjs@latest/copy.min.js"></script>
 ```
 
 **Module**
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/codingjlu/copyjs@1.0/copy.min.mjs"></script>
+<script src="https://cdn.jsdelivr.net/gh/codingjlu/copyjs@latest/copy.min.mjs"></script>
 ```
 
 *Remove the `.min` in the URL for development.*
