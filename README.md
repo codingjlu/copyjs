@@ -34,7 +34,9 @@ copyjs("Text to copy", ?options);
 
 All boolean values inside the `options` object.
 
+
 `reSelect`: After copy, select (highlight) text that user was originally highlighting before copy. Default is `true`.
+
 
 `html`: Copy HTML to clipboard instead of plain text; e.g. `copyjs('<h1 style="color:red;background-color:black;">Hello, world!</h1>', { html: true })`. Default is `false`.
 
